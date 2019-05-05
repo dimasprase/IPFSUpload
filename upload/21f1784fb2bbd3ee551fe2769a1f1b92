@@ -1,0 +1,39 @@
+<?php
+$fullname = $_POST['name'];
+$email = $_POST['email'];
+$phonenumber = $_POST['phonenumber'];
+$institution = $_POST['institution'];
+$phonenumber = $_POST['question1'];
+$institution = $_POST['question2'];
+
+if (!empty($fullname)) {
+	if (!empty($email)) {
+		$host = "localhost";
+		$dbusername = "wordpress";
+		$dbpassword = "32373d29f5fa76d39b71916d4c6c3f342caf8405b4b95753";
+		$dbname = "wordpress";
+
+		$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+
+		if (mysqli_connect_error()) {
+  			die('Connect Error ('. mysqli_connect_errno() .') '
+    . 		mysqli_connect_error());
+		} else {
+  			$sql = "INSERT INTO M_Event (eventId, Name, Email, PhoneNumber, Institution, Question1, Question2, Question3, Question4, Question5) VALUES ('1','$fullname','$email','$phonenumber','$institution','$question1','$question2','','','')";
+  			if ($conn->query($sql)) {
+   				echo "New record is inserted sucessfully";
+  			} else {
+    			echo "Error: ". $sql ."
+				". $conn->error;
+  			}
+  			$conn->close();
+		}
+	} else {
+  		echo "Error";
+  		die();
+	}
+} else {
+	echo "Error";
+	die();
+}
+?>

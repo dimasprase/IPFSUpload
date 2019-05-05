@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800);
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  font-family: Montserrat-Regular;
+  font-weight: 300;
+  color: #fff;
+  background: #efefef;
+}
+
+.row {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.row span {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.slide-up {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0 10px 15px;
+  font-family: Montserrat-Regular;
+  font-weight: 400;
+  color: #8B0000;
+  background: #efefef;
+  border: 0;
+  border-radius: 10px;
+  outline: 0;
+  text-indent: 200px;
+  transition: all .3s ease-in-out;
+  height: 80px;
+}
+.slide-up::-webkit-input-placeholder {
+  color: #efefef;
+  text-indent: 0;
+  font-weight: 300;
+  height: 80px;
+}
+.slide-up + label {
+  display: inline-block;
+  position: absolute;
+  transform: translateX(0);
+  top: 0;
+  left: 0;
+  padding: 30px 15px;
+  text-shadow: 0 2px 0 #000000;
+  font-weight: 1000;
+  color: #efefef;
+  transition: all .3s ease-in-out;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  overflow: hidden;
+  height: 80px;
+  width: 200px;
+  font-family: Montserrat-Regular;
+}
+.slide-up + label:before, .slide-up + label:after {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+.slide-up + label:before {
+  top: 6px;
+  left: 5px;
+  right: 5px;
+  bottom: 6px;
+  background: #FF6347;
+}
+.slide-up + label:after {
+  top: 0;
+  bottom: 0;
+  background: #FF6347;
+}
+
+.slide-up:focus,
+.slide-up:active {
+  color: #8B0000;
+  text-indent: 0;
+  background: #fff;
+}
+.slide-up:focus::-webkit-input-placeholder,
+.slide-up:active::-webkit-input-placeholder {
+  color: #aaa;
+}
+.slide-up:focus + label,
+.slide-up:active + label {
+  transform: translateY(-100%);
+}
+.slide-up:focus + label:before,
+.slide-up:active + label:before {
+  border-radius: 5px;
+}
+.slide-up:focus + label:after,
+.slide-up:active + label:after {
+  transform: translateY(100%);
+}
